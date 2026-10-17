@@ -1,0 +1,15 @@
+name: Criando pipelines com o github workflow
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Confere versão do ubuntu
+      run: cat /etc/os-release
+
+    - name: Exibir o ip address do runner
+      run: ip a
