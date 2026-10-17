@@ -6,10 +6,11 @@ on:
     - main
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Confere versão do ubuntu
-      run: cat /etc/os-release
+  informations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confere versão do ubuntu
+        run: cat /etc/os-release
 
-    - name: Exibir o ip address do runner
-      run: ip a
+      - name: Exibir o ip address do runner
+        run: ip a
