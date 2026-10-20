@@ -1,0 +1,20 @@
+name: Vendo arquivos compartilhados entre Steps
+
+on:
+  workflow_dispatch:
+
+jobs:
+  entre-steps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confere versao do Ubuntu
+        run: cat /etc/os-release
+      
+      - name: Envia ip do runner para arquivo
+        run: ip a > ip.txt
+
+      - name: Verifica conteúdo do diretorio
+        run: ls -lha
+
+      - name: Le conteudo do arquivo
+        run: cat ip.txt
