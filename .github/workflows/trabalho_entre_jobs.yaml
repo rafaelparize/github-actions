@@ -13,7 +13,7 @@ jobs:
       - name: Envia ip do runner para arquivo
         run: ip a > ${{ github.workspace }}/ip.txt
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: file-upload
           path: ${{ github.workspace }}/ip.txt
@@ -25,7 +25,7 @@ jobs:
       - name: Ver o conteudo do diretorio
         run: ls -lha
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v7
         with:
           name: file-upload
           path: config
