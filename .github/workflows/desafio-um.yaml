@@ -11,7 +11,7 @@ on:
 jobs:
   pull:
     runs-on: ubuntu-latest
-    if: ${{ inputs.print_tags }}
+    if: ${{ inputs.imagem != '' }}
     steps:
       - name: Pull a imagem
         run: docker image pull ${{ inputs.imagem }}
