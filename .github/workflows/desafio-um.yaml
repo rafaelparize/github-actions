@@ -31,4 +31,3 @@ jobs:
           command: quickview,cves,recommendations,sbom
           only-severities: critical,high
           image: ${{ inputs.imagem }}
-          format: markdown
