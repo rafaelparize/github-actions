@@ -30,3 +30,4 @@ jobs:
         with:
           command: cves
           image: ${{ inputs.imagem }}
+          format: markdown
