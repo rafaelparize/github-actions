@@ -14,4 +14,4 @@ jobs:
     if: ${{ inputs.print_tags }}
     steps:
       - name: Pull a imagem
-      
+        run: docker image pull ${{ inputs.imagem }}
