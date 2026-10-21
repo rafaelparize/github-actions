@@ -1,4 +1,4 @@
-name: Desafio workflow com input
+name: Validação de imagem de container
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
         type: string
 
 jobs:
-  pull_scan:
+  pipeline_seguranca:
     runs-on: ubuntu-26.04
     if: ${{ inputs.imagem != '' }}
     steps:
@@ -28,6 +28,7 @@ jobs:
       - name: Scan de vunerabilidades com docker scout
         uses: docker/scout-action@v1.26.0
         with:
-          command: cves
+          command: quickview,cves,recommendations,sbom
+          only-severities: critical,high
           image: ${{ inputs.imagem }}
           format: markdown
