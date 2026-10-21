@@ -1,0 +1,17 @@
+name: Desafio workflow com input
+
+on:
+  workflow_dispatch:
+    inputs:
+      imagem:
+        description: 'Nome da imagem'
+        required: true
+        type: string
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.print_tags }}
+    steps:
+      - name: Pull a imagem
+        run: docker image pull ${{ inputs.imagem }}
