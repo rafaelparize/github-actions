@@ -15,3 +15,12 @@ jobs:
     steps:
       - name: Pull a imagem
         run: docker image pull ${{ inputs.imagem }}
+
+      - name: Lista as imagens
+        run: docker image ls
+
+      - name: Scan de vunerabilidades com docker scout
+        uses: docker/scout-action@v1.26.0
+        with:
+          command: cves
+          image: ${{ inputs.imagem }}
