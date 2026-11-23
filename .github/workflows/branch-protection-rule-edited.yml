@@ -1,8 +1,8 @@
-name: Testando a regra de protection rule
+name: Testando a regra de protection rule edited
 
 on:
   branch_protection_rule:
-    types: [created, edited, deleted]
+    types: [edited]
 
 jobs:
   print-modification:
