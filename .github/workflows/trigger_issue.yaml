@@ -1,0 +1,12 @@
+name: Criando nosso trigger de issue
+
+on:
+  issues:
+    types: [opened, edited, excluded]
+
+jobs:
+  job-gollum:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print mensagem de issue
+        run: echo "Uma issue foi oberta/editada/excluida"
